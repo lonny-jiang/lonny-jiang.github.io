@@ -16,7 +16,10 @@
         color: #fff;
     }
     
-    .section1 {
+    .bg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
         background: url(bg-head.png) no-repeat;
         background-size: cover;
     }
@@ -37,12 +40,14 @@
     
     .p-content {
         position: relative;
-        top: 1000px;
+        left: 800px;
+        top: 20px;
     }
     </style>
 </head>
 
 <body>
+    <div class="bg"></div>
     <div id="fullpage">
         <!-- 分屏 -->
         <div class="section section1">
@@ -58,7 +63,8 @@
                 </div>
             </div>
         </div>
-        <div class="section">
+        <div class="section section2">
+            <h2>关于我</h2>
         </div>
         <div class="section">专业技能
             <!-- 幻灯片 -->
@@ -78,7 +84,6 @@
     $(document).ready(function() {
         $('#fullpage').fullpage({
             // 设置背景色
-            sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccc'],
             anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],
             paddingTop: '50px',
             paddingBottom: '50px',
@@ -91,10 +96,10 @@
                 if (index == 1) {
                     move(".head").rotate(360).end();
                     move(".section1 h2").scale(1.2).end();
-                    move(".p-content").set('top','20px').end();
+                    move(".p-content").set('left', '0').end();
                 }
                 if (index == 2) {
-                    alert("Section 3 ended loading");
+                    move(".section2 h2").scale(1.2).end();
                 }
                 if (index == 3) {
                     alert("Section 3 ended loading");
@@ -112,10 +117,10 @@
                 if (index == 1 && direction == 'down') {
                     move(".head").rotate(0).end();
                     move(".section1 h2").scale(1).end();
-                    move(".p-content").set('top','1000px').end();
+                    move(".p-content").set('left', '1000px').end();
                 }
                 if (index == 2 && direction == 'down') {
-                    alert("Going to section 3!");
+                    move(".section2 h2").scale(1).end();
                 }
                 if (index == 3 && direction == 'down') {
                     alert("Going to section 3!");
@@ -126,10 +131,6 @@
                 if (index == 5 && direction == 'down') {
                     alert("Going to section 3!");
                 }
-            },
-            afterRender: function() {
-                var pluginContainer = $(this);
-                // alert("The resulting DOM structure is ready");
             }
         });
     });
