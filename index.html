@@ -31,6 +31,13 @@
         -webkit-border-radius: 60px;
         background: url(head.png) no-repeat;
         background-size: cover;
+        overflow: hidden;
+        margin-bottom: 50px;
+    }
+    
+    .p-content {
+        position: relative;
+        top: 1000px;
     }
     </style>
 </head>
@@ -44,9 +51,9 @@
                 </div>
                 <h2>生活就像海洋，只有意志将强的人才能到达彼岸。</h2>
                 <div class="p-content">
-                <p>我叫蒋英龙</p>
-                <p>目标职位：前端工程师</p>
-                <p>lonnyi@163.com</p>
+                    <p>我叫蒋英龙</p>
+                    <p>目标职位：前端工程师</p>
+                    <p>lonnyi@163.com</p>
                 </div>
             </div>
         </div>
@@ -65,6 +72,7 @@
     </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.8/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/move.js/0.5.0/move.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
         $('#fullpage').fullpage({
@@ -76,6 +84,50 @@
             navigation: true,
             navigationPosition: 'right',
             navigationTooltips: ['首页', '关于我', '专业技能', '我的经历', '我的作品', '联系我'],
+            afterLoad: function(anchorLink, index) {
+                var loadedSection = $(this);
+                //using index
+                if (index == 1) {
+                    move(".head").rotate(360).end();
+                    move(".section1 h2").scale(1.2).end();
+                    move(".p-content").set('top','0').end();
+                }
+                if (index == 2) {
+                    alert("Section 3 ended loading");
+                }
+                if (index == 3) {
+                    alert("Section 3 ended loading");
+                }
+                if (index == 4) {
+                    alert("Section 3 ended loading");
+                }
+                if (index == 5) {
+                    alert("Section 3 ended loading");
+                }
+            },
+            onLeave: function(index, nextIndex, direction) {
+                var leavingSection = $(this);
+                //after leaving section 2
+                if (index == 1 && direction == 'down') {
+                    alert("Going to section 3!");
+                }
+                if (index == 2 && direction == 'down') {
+                    alert("Going to section 3!");
+                }
+                if (index == 3 && direction == 'down') {
+                    alert("Going to section 3!");
+                }
+                if (index == 4 && direction == 'down') {
+                    alert("Going to section 3!");
+                }
+                if (index == 5 && direction == 'down') {
+                    alert("Going to section 3!");
+                }
+            },
+            afterRender: function() {
+                var pluginContainer = $(this);
+                // alert("The resulting DOM structure is ready");
+            }
         });
     });
     </script>
