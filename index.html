@@ -90,7 +90,7 @@
                 if (index == 1) {
                     move(".head").rotate(360).end();
                     move(".section1 h2").scale(1.2).end();
-                    move(".p-content").set('top','0').end();
+                    move(".p-content").set('top','20px').end();
                 }
                 if (index == 2) {
                     alert("Section 3 ended loading");
@@ -109,7 +109,9 @@
                 var leavingSection = $(this);
                 //after leaving section 2
                 if (index == 1 && direction == 'down') {
-                    alert("Going to section 3!");
+                    move(".head").rotate(0).end();
+                    move(".section1 h2").scale(1).end();
+                    move(".p-content").set('top','1000px').end();
                 }
                 if (index == 2 && direction == 'down') {
                     alert("Going to section 3!");
