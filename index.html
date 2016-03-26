@@ -6,8 +6,31 @@
     <title>lonny个人主页</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.8/jquery.fullPage.css">
     <style type="text/css">
+    body {
+        font-family: "宋体";
+    }
+    
     div {
         text-align: center;
+        margin: 0 auto;
+        color: #fff;
+    }
+    
+    .section1 {
+        background: url(bg-head.jpg) no-repeat;
+        background-size: cover;
+    }
+    
+    .personal {
+        width: 1100px;
+    }
+    
+    .head {
+        width: 120px;
+        height: 120px;
+        -webkit-border-radius: 60px;
+        background: url(head.jpg) no-repeat;
+        background-size: cover;
     }
     </style>
 </head>
@@ -15,8 +38,20 @@
 <body>
     <div id="fullpage">
         <!-- 分屏 -->
-        <div class="section">首页</div>
-        <div class="section">关于我</div>
+        <div class="section section1">
+            <div class="personal">
+                <div class="head">
+                </div>
+                <h2>生活就像海洋，只有意志将强的人才能到达彼岸。</h2>
+                <div class="p-content">
+                <p>我叫蒋英龙</p>
+                <p>目标职位：前端工程师</p>
+                <p>lonnyi@163.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+        </div>
         <div class="section">专业技能
             <!-- 幻灯片 -->
             <div class="slide">11</div>
