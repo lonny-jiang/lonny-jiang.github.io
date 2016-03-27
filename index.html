@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>lonny个人主页</title>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.8/jquery.fullPage.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
     <style type="text/css">
     body {
         font-family: "宋体";
@@ -31,7 +31,7 @@
     }
     
     .personal {
-      position: relative;
+        position: relative;
         width: 80%;
     }
     
@@ -55,16 +55,17 @@
         transform: scale(1.2);
         font-weight: bold;
     }
-    .section2 h3{
-      position: relative;
-      bottom: 35px;
+    
+    .section2 h3 {
+        position: relative;
+        bottom: 35px;
     }
     
     .me {
         position: relative;
-        right:1600px;
+        right: 1600px;
         line-height: 24px;
-        padding:40px 30px;
+        padding: 40px 30px;
     }
     
     .me:before {
@@ -77,6 +78,7 @@
         border-top: 2px solid #5686D6;
         border-left: 2px solid #5686D6;
     }
+    
     .me:after {
         position: absolute;
         width: 50px;
@@ -87,7 +89,13 @@
         border-bottom: 2px solid #5686D6;
         border-right: 2px solid #5686D6;
     }
-
+    
+    .slide img {
+        width: 200px;
+        border-radius: 20px;
+        position: relative;
+        top:-60px;
+    }
     </style>
 </head>
 
@@ -114,10 +122,11 @@
                 </div>
             </div>
         </div>
-        <div class="section">专业技能
+        <div class="section section3">
+            <h3>专业技能</h3>
             <!-- 幻灯片 -->
-            <div class="slide">11</div>
-            <div class="slide">22</div>
+            <div class="slide"><img src="img/html5.png"></div>
+            <div class="slide"><img src="img/css.jpg"></div>
             <div class="slide">33</div>
             <div class="slide">44</div>
         </div>
@@ -151,7 +160,7 @@
                     move(".me").set('right', '0').end();
                 }
                 if (index == 3) {
-                    alert("Section 3 ended loading");
+                    move(".section3 h3").scale(1.2).end();
                 }
                 if (index == 4) {
                     alert("Section 3 ended loading");
