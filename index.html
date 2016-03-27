@@ -31,6 +31,7 @@
     }
     
     .personal {
+      position: relative;
         width: 80%;
     }
     
@@ -54,6 +55,39 @@
         transform: scale(1.2);
         font-weight: bold;
     }
+    .section2 h3{
+      position: relative;
+      bottom: 35px;
+    }
+    
+    .me {
+        position: relative;
+        right:800px;
+        line-height: 24px;
+        padding:40px 30px;
+    }
+    
+    .me:before {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        content: "";
+        top: 0;
+        left: 0;
+        border-top: 2px solid #5686D6;
+        border-left: 2px solid #5686D6;
+    }
+    .me:after {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        content: "";
+        bottom: 0;
+        right: 0;
+        border-bottom: 2px solid #5686D6;
+        border-right: 2px solid #5686D6;
+    }
+
     </style>
 </head>
 
@@ -75,6 +109,10 @@
         </div>
         <div class="section section2">
             <h3>关于我</h3>
+            <div class="personal">
+                <div class="me">2010年毕业于西安城市建设学院，现就职于北京爱迪国际学校 工作之余喜欢钻研web前端技术，对精美的网页尤为敬佩和喜爱 日新月异的web前沿技术和层出不穷的框架让我既兴奋又期待 代码强迫症患者，看漂亮的代码对我而言是一种极致享受
+                </div>
+            </div>
         </div>
         <div class="section">专业技能
             <!-- 幻灯片 -->
@@ -110,6 +148,7 @@
                 }
                 if (index == 2) {
                     move(".section2 h3").scale(1.2).end();
+                    move(".me").set('right', '0').end();
                 }
                 if (index == 3) {
                     alert("Section 3 ended loading");
@@ -131,6 +170,7 @@
                 }
                 if (index == 2 && direction == 'down') {
                     move(".section2 h3").scale(1).end();
+                    move(".me").set('right', '800px').end();
                 }
                 if (index == 3 && direction == 'down') {
                     alert("Going to section 3!");
