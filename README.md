@@ -1,2 +1,2 @@
 # lonny-jiang.github.io
-fullpage
+lonny个人主页
