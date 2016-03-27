@@ -96,10 +96,11 @@
         position: relative;
         top: -55px;
     }
-    @media screen and (max-width: 640px){ 
-    .slide img{
-      width: 50%;
-     }
+    
+    @media screen and (max-width: 640px) {
+        .slide img {
+            width: 50%;
+        }
     }
     </style>
 </head>
@@ -135,7 +136,14 @@
             <div class="slide"><img src="img/js.jpg"></div>
             <div class="slide"><img src="img/jquery.jpg"></div>
         </div>
-        <div class="section">我的经历</div>
+        <div class="section section4">
+            <h3>我的经历</h3>
+            <!-- 幻灯片 -->
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+        </div>
         <div class="section">我的作品</div>
         <div class="section">联系我</div>
     </div>
@@ -168,10 +176,10 @@
                     move(".section3 h3").scale(1.5).end();
                 }
                 if (index == 4) {
-                    alert("Section 3 ended loading");
+                    
                 }
                 if (index == 5) {
-                    alert("Section 3 ended loading");
+                    
                 }
             },
             onLeave: function(index, nextIndex, direction) {
@@ -187,13 +195,13 @@
                     move(".me").set('right', '1600px').end();
                 }
                 if (index == 3 && direction == 'down') {
-                    alert("Going to section 3!");
+                    move(".section3 h3").scale(1).end();
                 }
                 if (index == 4 && direction == 'down') {
-                    alert("Going to section 3!");
+                    
                 }
                 if (index == 5 && direction == 'down') {
-                    alert("Going to section 3!");
+                    
                 }
             }
         });
