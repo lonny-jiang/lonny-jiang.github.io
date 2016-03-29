@@ -20,6 +20,10 @@
     h3:hover {
         color: #ff8400;
     }
+    a{
+      color: #fff;
+      text-decoration: none;
+    }
     
     .bg {
         width: 100%;
@@ -139,10 +143,7 @@
         <div class="section section4">
             <h3>我的经历</h3>
             <!-- 幻灯片 -->
-            <div class="slide"><a href="shop.html">商城网站demo</a></div>
-            <div class="slide"></div>
-            <div class="slide"></div>
-            <div class="slide"></div>
+            <a href="shop.html">商城网站demo</a>
         </div>
         <div class="section">我的作品</div>
         <div class="section">联系我</div>
@@ -174,6 +175,7 @@
                 }
                 if (index == 3) {
                     move(".section3 h3").scale(1.5).end();
+                    move(".section3 a").rotate(720).end();
                 }
                 if (index == 4) {
                     
@@ -196,6 +198,9 @@
                 }
                 if (index == 3 && direction == 'down') {
                     move(".section3 h3").scale(1).end();
+                    move(".section3 a").rotate(0).end();
+                }
+
                 }
                 if (index == 4 && direction == 'down') {
                     
