@@ -20,10 +20,12 @@
     h3:hover {
         color: #ff8400;
     }
-    a{
-      color: #fff;
-      text-decoration: none;
+    
+    a {
+        color: #fff;
+        text-decoration: none;
     }
+    
     a:hover {
         color: #ff8400;
     }
@@ -144,7 +146,7 @@
             <div class="slide"><img src="img/jquery.jpg"></div>
         </div>
         <div class="section section4">
-            <h3>我的经历</h3>
+            <h3>我的DEMO</h3>
             <!-- 幻灯片 -->
             <a href="shop.html">商城网站demo</a>
         </div>
@@ -178,13 +180,13 @@
                 }
                 if (index == 3) {
                     move(".section3 h3").scale(1.5).end();
-                    move(".section3 a").rotate(720).end();
                 }
                 if (index == 4) {
-                    
+                    move(".section4 h3").scale(1.5).end();
+                    move(".section4 a").rotate(720).end();
                 }
                 if (index == 5) {
-                    
+
                 }
             },
             onLeave: function(index, nextIndex, direction) {
@@ -201,14 +203,16 @@
                 }
                 if (index == 3 && direction == 'down') {
                     move(".section3 h3").scale(1).end();
-                    move(".section3 a").rotate(0).end();
+
 
                 }
                 if (index == 4 && direction == 'down') {
-                    
+                    move(".section4 h3").scale(1).end();
+                    move(".section4 a").rotate(0).end();
+
                 }
                 if (index == 5 && direction == 'down') {
-                    
+
                 }
             }
         });
